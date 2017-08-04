@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<!-- TODO: локализация english, polish, belarus, ukraine,-->
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Машинка</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <meta name="title" content='Тренажер внимания "Машинка"'>
+    <meta name="description" content="Классическое упражнение по актёрскому мастерству, для тренировки внимания.">
+    <link rel="image_src" href="image.jpg"/>
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+<!-- Шапка -->
+
+<div class="header" title="Собери своё внимание :)">
+    <p id="header" title>
+        <b>Эмулятор классического актёрского упражнения</b>
+        <span id="logo">"Машинка"</span>
+        <sup>
+            <span class="lnk" onclick="typeWriter.about(this)" title="Информация о версиях"> версия <span
+                    id="version"></span></span>
+            &nbsp;-&nbsp;
+            <a class="lnk" href='http:\\vk.com\\yhmelenko' target="_blank" title="Связь с разработчиком">
+                Hmelenko&copy;
+            </a>
+        </sup>
+    </p>
+</div>
+
+<!-- Строчка для упражнения -->
+
+<div class="parent text-parent">
+    <div align="center">
+        <span id="text" title='Эту строчку нужно "напечатать"'></span>
+
+        <div>
+            <div id="title-letters">ваша буква:</div>
+            <span title="Ваша буква" class="letter"></span>
+        </div>
+    </div>
+</div>
+
+<!-- Футер -->
+
+<div class="navbar-fixed-bottom row-fluid">
+
+    <div class="navbar-inner">
+
+        <div id="info" align="center">
+            Запомните этот текст! Он пропадёт во время упражнения!<br>
+
+            <div id="information">
+                Ритм: одна буква в <b><span class="lnk" id="seconds" onclick="typeWriter.seconds(this);"
+                                            title="Изменить скорость">две секунды</span></b>.
+                <br>
+                Вовремя <b><span class="lnk" onclick="typeWriter.soundOn(this);"
+                                 title="Реагировать на хлопки">нажимайте</span></b>,
+                когда подойдёт ваша буква, или конец слова.
+            </div>
+            <div class="range" title="Установите комфортную чувствительность микрофона">
+                <label>
+                    <sub><i>Чувствительность микрофона: <span id="rangeValue">50</span>%</i></sub>
+                    <input value="50" id="range" class="lnk" type="range" onchange="typeWriter.rangeChange(this);">
+                </label>
+            </div>
+
+            <span class="text-bold"><span id="soundOn">НАЖМИТЕ</span> ДЛЯ НАЧАЛА УПРАЖНЕНИЯ</span>
+        </div>
+
+    </div>
+</div>
+
+<!-- TODO: подругрузка и проверка загрузки звуков-->
+<audio src="sounds/fastLetter.mp3"></audio>
+<audio src="sounds/slowLetter.mp3"></audio>
+<audio src="sounds/capitalLetter.mp3"></audio>
+<audio src="sounds/space.mp3"></audio>
+<audio src="sounds/bell.mp3"></audio>
+<audio src="sounds/return.mp3"></audio>
+
+<!-- модальное окошко -->
+<div class="parent" id="metronome">
+    <div id="animate" class="block">
+        <div class="timer">Начинаем через: <span id="timer">5</span></div>
+        Запомните вашу букву:
+        <div class="letter"></div>
+    </div>
+</div>
+
+<!-- TODO: не выводить страницу до окончания загрузки -->
+<!--style>
+    .upload{
+
+        visibility: visible;
+        border: dashed;
+        background-color: inherit;
+
+
+    }
+</style>
+<div class="parent upload lnk">
+    <div align="center">
+
+    </div>
+</div-->
+
+
+</body>
+
+</html>

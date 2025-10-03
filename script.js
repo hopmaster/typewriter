@@ -31,9 +31,9 @@
 
         var wr = window.onresize;
 
-        window.onresize = '';
+        window.onresize = null;
 
-        typeWriter.text.style = stopAnimations;
+        typeWriter.text.style.cssText = stopAnimations;
 
         typeWriter.text.style.fontSize = '0';
 
@@ -41,7 +41,7 @@
 
         setTimeout(function () {
 
-            typeWriter.text.style = startAnimations;
+            typeWriter.text.style.cssText = startAnimations;
 
             typeWriter.animate.style.webkitTransform = "translate(-1500px,500px)";
 
@@ -78,7 +78,7 @@
 
             window.onresize(); //адаптируем под размер экрана
 
-            document.onmousedown = document.onkeydown = '';
+            document.onmousedown = document.onkeydown = null;
 
             setTimeout(function () {
 
@@ -109,7 +109,7 @@
     function startPractice(level) {
 
         //запрет нажатий
-        document.onmousedown = document.onkeydown = '';
+        document.onmousedown = document.onkeydown = null;
 
         typeWriter.metronome.style.visibility = 'visible';
 
@@ -188,7 +188,7 @@
 
             currentLetter = text[letter++];
 
-            typeWriter.letter.style = stopAnimations;
+            typeWriter.letter.style.cssText = stopAnimations;
             typeWriter.letter.style.backgroundColor = "rgba(138, 255, 60, 0.6)";
 
             //Успешно достигли конца строки
@@ -197,7 +197,7 @@
                 clearInterval(timer);
 
                 typeWriter.letter.style.backgroundColor = "";
-                document.onmousedown = document.onkeydown = '';
+                document.onmousedown = document.onkeydown = null;
 
                 typeWriter.return.play();
 
@@ -321,7 +321,7 @@
 
             clearInterval(timer);
 
-            document.onmousedown = document.onkeydown = '';
+            document.onmousedown = document.onkeydown = null;
 
             setTimeout(function () {
 

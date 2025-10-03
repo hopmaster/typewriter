@@ -8,7 +8,8 @@ window.onresize = function (){
     var width= typeWriter.width = document.documentElement.clientWidth;
     var height=document.documentElement.clientHeight;
 
-    typeWriter.text.style.fontSize=((typeWriter.width*1.7)/typeWriter.text.textContent.length)+"px";
+    var textLength = typeWriter.text.textContent.length || 1;
+    typeWriter.text.style.fontSize=((typeWriter.width*1.7)/textLength)+"px";
     typeWriter.text.style.top = height/2 + "px";
     typeWriter.header.style.fontSize=(width/70)+"px";
     typeWriter.logo.style.fontSize=(width/20)+"px";
